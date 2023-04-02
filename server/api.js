@@ -18,6 +18,9 @@ app.options('*', cors());
 const uri = 'mongodb+srv://louisoules:iyZZqeuQC63HJvI6@cluster0.pdlqo9a.mongodb.net/test?retryWrites=true&writeConcern=majority';
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+app.get('/', async (request, response) => {
+  response.status(200).json({message: "Hello World !"})
+})
 
 app.get('/products', async (request, response) => {
   try {
